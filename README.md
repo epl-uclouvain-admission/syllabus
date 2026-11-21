@@ -36,5 +36,5 @@ Si vous repérez une coquille dans un énoncé, une démonstration, une figure o
 
 ## 👥 Auteurs et direction
 
-- **Direction artistique & *Prompt Engineering*** : L'équipe de l'examen d'admission à l'EPL — UCLouvain (**Jean-François Remacle** et **Pierre Schaus**).
+- **Direction artistique & *Prompt Engineering*** : L'équipe de l'examen d'admission à l'EPL — UCLouvain (**Laurent Françis**, **Charles Pecheur**, **Thomas Peters**, **Hadrien Rattez**, **Jean-François Remacle** et **Pierre Schaus**).
 - **Rédaction et mise en forme $\LaTeX$ / TikZ** : assistée par Intelligence Artificielle sous la supervision des enseignants.
