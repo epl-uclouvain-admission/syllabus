@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Syllabus de Mathématiques — Examen d'admission Ingénieur Civil | UCLouvain (EPL)</title>
+  <meta name="description" content="Portail officiel des syllabus de mathématiques (Algèbre, Analyse, Trigonométrie et Géométrie) pour la préparation à l'examen spécial d'admission aux études d'ingénieur civil à l'UCLouvain (École Polytechnique de Louvain - EPL)." />
+  <style>
+    :root {
+      --ucl-blue: #00356B;
+      --ucl-blue-dark: #002347;
+      --ucl-accent: #0072BC;
+      --ucl-light-blue: #EBF3FA;
+      --def-green: #146E3C;
+      --def-light-green: #EEF8F2;
+      --ex-orange: #B45500;
+      --ex-light-orange: #FDF6EE;
+      --warn-red: #AA1E1E;
+      --warn-light-red: #FDF0F0;
+      --bg-page: #F7F9FC;
+      --bg-card: #FFFFFF;
+      --text-main: #1A2332;
+      --text-muted: #526075;
+      --border-color: #DCE5F0;
+      --shadow-sm: 0 2px 8px rgba(0, 53, 107, 0.06);
+      --shadow-md: 0 10px 28px rgba(0, 53, 107, 0.10);
+      --radius-md: 12px;
+      --radius-lg: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--ucl-accent);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    a:hover {
+      color: var(--ucl-blue);
+    }
+
+    /* Top Bar / Navbar */
+    .topbar {
+      background-color: var(--ucl-blue-dark);
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 0.875rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .topbar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.55rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .topbar a {
+      color: #A8D4FF;
+      font-weight: 500;
+    }
+
+    .topbar a:hover {
+      color: #FFFFFF;
+      text-decoration: underline;
+    }
+
+    .topbar-links {
+      display: flex;
+      gap: 1.25rem;
+      align-items: center;
+    }
+
+    /* Hero Header */
+    .hero {
+      background: linear-gradient(135deg, var(--ucl-blue-dark) 0%, var(--ucl-blue) 55%, var(--ucl-accent) 100%);
+      color: #FFFFFF;
+      padding: 4rem 1.5rem 4.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #FFFFFF;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.9rem, 4vw, 2.85rem);
+      line-height: 1.2;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      max-width: 850px;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.05rem, 1.8vw, 1.22rem);
+      color: rgba(255, 255, 255, 0.92);
+      max-width: 820px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      padding: 0.78rem 1.35rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.96rem;
+      transition: all 0.18s ease;
+      cursor: pointer;
+      border: 1px solid transparent;
+      text-decoration: none;
+    }
+
+    .btn svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+
+    .btn-light {
+      background-color: #FFFFFF;
+      color: var(--ucl-blue);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-light:hover {
+      background-color: var(--ucl-light-blue);
+      color: var(--ucl-blue-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline-light {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #FFFFFF;
+      border-color: rgba(255, 255, 255, 0.35);
+    }
+
+    .btn-outline-light:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: #FFFFFF;
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background-color: var(--ucl-blue);
+      color: #FFFFFF;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--ucl-accent);
+      color: #FFFFFF;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background-color: var(--ucl-light-blue);
+      color: var(--ucl-blue);
+      border-color: #C5D9ED;
+    }
+
+    .btn-secondary:hover {
+      background-color: #DCEAF7;
+      color: var(--ucl-blue-dark);
+    }
+
+    .btn-ghost {
+      background-color: #F3F6FA;
+      color: var(--text-main);
+      border-color: var(--border-color);
+      font-size: 0.88rem;
+      padding: 0.55rem 0.95rem;
+    }
+
+    .btn-ghost:hover {
+      background-color: #E6EEF7;
+      color: var(--ucl-blue);
+      border-color: #B9CFE8;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
+    }
+
+    /* Section Headings */
+    .section-header {
+      margin-bottom: 2rem;
+    }
+
+    .section-eyebrow {
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--ucl-accent);
+      margin-bottom: 0.35rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      color: var(--ucl-blue);
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 780px;
+    }
+
+    /* Cards Grid for the 3 Syllabi */
+    .syllabus-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 1.75rem;
+      margin-bottom: 4rem;
+    }
+
+    .syllabus-card {
+      background-color: var(--bg-card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .syllabus-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .card-accent-bar {
+      height: 6px;
+      width: 100%;
+    }
+
+    .card-algebre .card-accent-bar {
+      background: linear-gradient(90deg, var(--ucl-blue), var(--ucl-accent));
+    }
+
+    .card-analyse .card-accent-bar {
+      background: linear-gradient(90deg, var(--def-green), #239B56);
+    }
+
+    .card-geotrig .card-accent-bar {
+      background: linear-gradient(90deg, var(--ex-orange), #E67E22);
+    }
+
+    .card-body {
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .card-top-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .card-tag {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.28rem 0.7rem;
+      border-radius: 6px;
+    }
+
+    .card-algebre .card-tag {
+      background-color: var(--ucl-light-blue);
+      color: var(--ucl-blue);
+    }
+
+    .card-analyse .card-tag {
+      background-color: var(--def-light-green);
+      color: var(--def-green);
+    }
+
+    .card-geotrig .card-tag {
+      background-color: var(--ex-light-orange);
+      color: var(--ex-orange);
+    }
+
+    .build-badge {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .build-badge img {
+      height: 20px;
+      display: block;
+    }
+
+    .card-title {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 0.6rem;
+      line-height: 1.3;
+    }
+
+    .card-summary {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.25rem;
+    }
+
+    /* Highlights pills inside card */
+    .topic-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-bottom: 1.35rem;
+    }
+
+    .topic-pill {
+      font-size: 0.8rem;
+      background-color: #F2F5F9;
+      color: #344356;
+      padding: 0.22rem 0.6rem;
+      border-radius: 6px;
+      border: 1px solid #E2E9F2;
+      font-weight: 500;
+    }
+
+    /* Collapsible chapters list */
+    details.chapters-details {
+      margin-bottom: 1.5rem;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      background-color: #FAFBFD;
+      overflow: hidden;
+    }
+
+    details.chapters-details summary {
+      padding: 0.65rem 0.95rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--ucl-blue);
+      cursor: pointer;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      list-style: none;
+    }
+
+    details.chapters-details summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details.chapters-details summary::after {
+      content: "▾";
+      font-size: 0.9rem;
+      transition: transform 0.2s ease;
+    }
+
+    details.chapters-details[open] summary::after {
+      transform: rotate(180deg);
+    }
+
+    details.chapters-details summary:hover {
+      background-color: var(--ucl-light-blue);
+    }
+
+    .chapters-list {
+      padding: 0.75rem 1.1rem 0.9rem 2rem;
+      font-size: 0.85rem;
+      color: var(--text-main);
+      border-top: 1px solid var(--border-color);
+      background-color: #FFFFFF;
+    }
+
+    .chapters-list li {
+      margin-bottom: 0.4rem;
+    }
+
+    .chapters-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Card Actions */
+    .card-actions {
+      margin-top: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .card-actions .btn-primary {
+      width: 100%;
+    }
+
+    .card-subactions {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.5rem;
+    }
+
+    /* Contribution Section (Tickets & Pull Requests) */
+    .contrib-section {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      padding: 2.5rem;
+      margin-bottom: 4rem;
+    }
+
+    .contrib-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.75rem;
+      margin-top: 1.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .contrib-box {
+      border-radius: var(--radius-md);
+      padding: 1.6rem;
+      border: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .contrib-box-ticket {
+      background-color: var(--ucl-light-blue);
+      border-color: #BBD6F2;
+    }
+
+    .contrib-box-pr {
+      background-color: var(--def-light-green);
+      border-color: #B8E2C8;
+    }
+
+    .contrib-box-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .contrib-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: #FFFFFF;
+    }
+
+    .contrib-box-ticket .contrib-icon {
+      background-color: var(--ucl-blue);
+    }
+
+    .contrib-box-pr .contrib-icon {
+      background-color: var(--def-green);
+    }
+
+    .contrib-box h3 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .contrib-box p {
+      font-size: 0.94rem;
+      color: var(--text-main);
+    }
+
+    .contrib-steps {
+      padding-left: 1.25rem;
+      font-size: 0.9rem;
+      color: var(--text-main);
+    }
+
+    .contrib-steps li {
+      margin-bottom: 0.35rem;
+    }
+
+    .contrib-links-bar {
+      background-color: #F8FAFD;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contrib-links-bar h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--ucl-blue);
+    }
+
+    .repo-quick-actions {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 0.85rem;
+    }
+
+    .repo-quick-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 0.85rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    .repo-quick-title {
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: var(--text-main);
+    }
+
+    .repo-quick-btns {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    /* Info / About & Local Compilation Grid */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .info-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .info-card h3 {
+      font-size: 1.18rem;
+      font-weight: 800;
+      color: var(--ucl-blue);
+      margin-bottom: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .info-card p, .info-card li {
+      font-size: 0.93rem;
+      color: var(--text-muted);
+    }
+
+    .info-card ul {
+      padding-left: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .info-card li {
+      margin-bottom: 0.45rem;
+    }
+
+    .info-card strong {
+      color: var(--text-main);
+    }
+
+    pre.code-block {
+      background-color: #162130;
+      color: #E6EDF6;
+      padding: 0.9rem 1.1rem;
+      border-radius: 8px;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      font-size: 0.84rem;
+      overflow-x: auto;
+      margin-top: 0.85rem;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: var(--ucl-blue-dark);
+      color: rgba(255, 255, 255, 0.78);
+      padding: 2.5rem 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer a {
+      color: #A8D4FF;
+    }
+
+    .footer a:hover {
+      color: #FFFFFF;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 3rem 1.25rem 3.5rem;
+      }
+      .contrib-section {
+        padding: 1.5rem;
+      }
+      .card-subactions {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barre supérieure institutionnelle -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div>
+        <strong>UCLouvain</strong> — École Polytechnique de Louvain (EPL)
+      </div>
+      <div class="topbar-links">
+        <a href="https://uclouvain.be/fr/facultes/epl" target="_blank" rel="noopener">Site de l'EPL ↗</a>
+        <a href="https://github.com/epl-uclouvain-admission" target="_blank" rel="noopener">Organisation GitHub ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- En-tête principal (Hero) -->
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="badge-pill">
+        <span>🎓 Examen spécial d'admission aux études d'ingénieur civil</span>
+      </div>
+      <h1>Syllabus de Mathématiques — UCLouvain (EPL)</h1>
+      <p class="hero-subtitle">
+        Ressources pédagogiques ouvertes, cours complets, formulaires récapitulatifs et exercices corrigés issus des annales (2018–2026) pour préparer les épreuves d'<strong>Algèbre</strong>, d'<strong>Analyse</strong> et de <strong>Trigonométrie &amp; Géométrie</strong> (sans calculatrice).
+      </p>
+      <div class="hero-actions">
+        <a href="#syllabus" class="btn btn-light">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Télécharger les syllabus (PDF)
+        </a>
+        <a href="#contribuer" class="btn btn-outline-light">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          Signaler une erreur ou suggérer une amélioration
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contenu principal -->
+  <main class="container">
+
+    <!-- Section 1 : Les 3 Syllabus -->
+    <section id="syllabus">
+      <div class="section-header">
+        <div class="section-eyebrow">Téléchargements &amp; Dépôts GitHub</div>
+        <h2 class="section-title">Les trois syllabus de mathématiques</h2>
+        <p class="section-desc">
+          Chaque syllabus est maintenu dans un dépôt GitHub dédié et compilé automatiquement en PDF à chaque mise à jour via GitHub Actions. Cliquez sur les boutons ci-dessous pour télécharger la dernière version du PDF ou parcourir le code source LaTeX.
+        </p>
+      </div>
+
+      <div class="syllabus-grid">
+
+        <!-- Carte 1 : Algèbre -->
+        <article class="syllabus-card card-algebre">
+          <div class="card-accent-bar"></div>
+          <div class="card-body">
+            <div class="card-top-meta">
+              <span class="card-tag">Épreuve d'Algèbre</span>
+              <a class="build-badge" href="https://github.com/epl-uclouvain-admission/syllabus_algebre/actions/workflows/build-pdf.yml" target="_blank" rel="noopener" title="Statut de la compilation automatique LaTeX">
+                <img src="https://github.com/epl-uclouvain-admission/syllabus_algebre/actions/workflows/build-pdf.yml/badge.svg" alt="Build LaTeX PDF - Algèbre" />
+              </a>
+            </div>
+
+            <h3 class="card-title">Syllabus d'Algèbre</h3>
+            <p class="card-summary">
+              Polynômes, équations, radicaux, exponentielles, logarithmes, nombres complexes, analyse combinatoire, probabilités, suites, discussions paramétriques et mise en équations. Inclut les annales résolues (2021–2026).
+            </p>
+
+            <div class="topic-pills">
+              <span class="topic-pill">Polynômes &amp; Horner</span>
+              <span class="topic-pill">Exp &amp; Log</span>
+              <span class="topic-pill">Nombres complexes ℂ</span>
+              <span class="topic-pill">Combinatoire &amp; Probas</span>
+              <span class="topic-pill">Suites</span>
+              <span class="topic-pill">Inéquations paramétriques</span>
+              <span class="topic-pill">Systèmes &amp; Problèmes</span>
+            </div>
+
+            <details class="chapters-details">
+              <summary>Voir la table des matières (10 chapitres + annexe)</summary>
+              <ol class="chapters-list">
+                <li><strong>Chapitre 1 :</strong> Polynômes, factorisation et division euclidienne</li>
+                <li><strong>Chapitre 2 :</strong> Équations, valeurs absolues, radicaux et domaines d'existence</li>
+                <li><strong>Chapitre 3 :</strong> Exponentielles et logarithmes : calculs, équations et bases variables</li>
+                <li><strong>Chapitre 4 :</strong> Nombres complexes dans ℂ</li>
+                <li><strong>Chapitre 5 :</strong> Analyse combinatoire, binôme de Newton et probabilités</li>
+                <li><strong>Chapitre 6 :</strong> Suites arithmétiques et géométriques</li>
+                <li><strong>Chapitre 7 :</strong> Discussion d'équations et d'inéquations paramétriques</li>
+                <li><strong>Chapitre 8 :</strong> Mise en équations et systèmes algébriques (Problèmes textuels)</li>
+                <li><strong>Chapitre 9 :</strong> Formulaire récapitulatif (4 pages A4)</li>
+                <li><strong>Annexe :</strong> Raisonnement logique, ensembles et méthodes de démonstration</li>
+                <li><strong>Chapitre 10 :</strong> Corrigés détaillés des exercices</li>
+              </ol>
+            </details>
+
+            <div class="card-actions">
+              <a class="btn btn-primary" href="https://github.com/epl-uclouvain-admission/syllabus_algebre/releases/download/latest/syllabus_algebre_uclouvain.pdf" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Télécharger le PDF (Algèbre)
+              </a>
+              <div class="card-subactions">
+                <a class="btn btn-ghost" href="https://github.com/epl-uclouvain-admission/syllabus_algebre" target="_blank" rel="noopener" title="Accéder au dépôt GitHub">
+                  Dépôt Git
+                </a>
+                <a class="btn btn-ghost" href="https://github.com/epl-uclouvain-admission/syllabus_algebre/issues" target="_blank" rel="noopener" title="Signaler une erreur via un ticket (Issue)">
+                  Tickets
+                </a>
+                <a class="btn btn-ghost" href="https://github.com/epl-uclouvain-admission/syllabus_algebre/pulls" target="_blank" rel="noopener" title="Proposer une correction via Pull Request">
+                  Pull Requests
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Carte 2 : Analyse -->
+        <article class="syllabus-card card-analyse">
+          <div class="card-accent-bar"></div>
+          <div class="card-body">
+            <div class="card-top-meta">
+              <span class="card-tag">Épreuve d'Analyse</span>
+              <a class="build-badge" href="https://github.com/epl-uclouvain-admission/syllabus_analyse/actions/workflows/build-pdf.yml" target="_blank" rel="noopener" title="Statut de la compilation automatique LaTeX">
+                <img src="https://github.com/epl-uclouvain-admission/syllabus_analyse/actions/workflows/build-pdf.yml/badge.svg" alt="Build LaTeX PDF - Analyse" />
+              </a>
+            </div>
+
+            <h3 class="card-title">Syllabus d'Analyse</h3>
+            <p class="card-summary">
+              Fonctions réelles et transcendantes, limites, continuité, asymptotes, dérivées, théorèmes de Rolle et TAF, étude complète de fonctions, optimisation appliquée, primitives, intégrales définies, aires et volumes. Inclut les annales résolues (2021–2026).
+            </p>
+
+            <div class="topic-pills">
+              <span class="topic-pill">Fonctions &amp; Domaines</span>
+              <span class="topic-pill">Limites &amp; Asymptotes</span>
+              <span class="topic-pill">Dérivées &amp; L'Hospital</span>
+              <span class="topic-pill">Étude de fonctions</span>
+              <span class="topic-pill">Optimisation</span>
+              <span class="topic-pill">Primitives &amp; Intégrales</span>
+              <span class="topic-pill">Aires &amp; Volumes</span>
+            </div>
+
+            <details class="chapters-details">
+              <summary>Voir la table des matières (9 chapitres + annexe)</summary>
+              <ol class="chapters-list">
+                <li><strong>Chapitre 1 :</strong> Fonctions réelles, domaines et fonctions transcendantes</li>
+                <li><strong>Chapitre 2 :</strong> Limites, continuité et asymptotes</li>
+                <li><strong>Chapitre 3 :</strong> Dérivées et grands théorèmes d'analyse (L'Hospital, Rolle, TAF)</li>
+                <li><strong>Chapitre 4 :</strong> Étude complète de fonctions</li>
+                <li><strong>Chapitre 5 :</strong> Problèmes d'optimisation appliquée</li>
+                <li><strong>Chapitre 6 :</strong> Calcul intégral et primitives</li>
+                <li><strong>Chapitre 7 :</strong> Intégrales définies, inégalités, aires et volumes de révolution</li>
+                <li><strong>Chapitre 8 :</strong> Formulaire récapitulatif (4 pages A4)</li>
+                <li><strong>Annexe :</strong> Raisonnement logique et méthodes de démonstration en analyse</li>
+                <li><strong>Chapitre 9 :</strong> Corrigés détaillés des exercices</li>
+              </ol>
+            </details>
+
+            <div class="card-actions">
+              <a class="btn btn-primary" href="https://github.com/epl-uclouvain-admission/syllabus_analyse/releases/download/latest/syllabus_analyse_uclouvain.pdf" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Télécharger le PDF (Analyse)
+              </a>
+              <div class="card-subactions">
+                <a class="btn btn-ghost" href="https://github.com/epl-uclouvain-admission/syllabus_analyse" target="_blank" rel="noopener" title="Accéder au dépôt GitHub">
+                  Dépôt Git
+                </a>
+                <a class="btn btn-ghost" href="https://github.com/epl-uclouvain-admission/syllabus_analyse/issues" target="_blank" rel="noopener" title="Signaler une erreur via un ticket (Issue)">
+                  Tickets
+                </a>
+                <a class="btn btn-ghost" href="https://github.com/epl-uclouvain-admission/syllabus_analyse/pulls" target="_blank" rel="noopener" title="Proposer une correction via Pull Request">
+                  Pull Requests
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Carte 3 : Trigonométrie & Géométrie -->
+        <article class="syllabus-card card-geotrig">
+          <div class="card-accent-bar"></div>
+          <div class="card-body">
+            <div class="card-top-meta">
+              <span class="card-tag">Épreuve fusionnée</span>
+              <a class="build-badge" href="https://github.com/epl-uclouvain-admission/syllabus_geometrie_trigonometrie/actions/workflows/build-pdf.yml" target="_blank" rel="noopener" title="Statut de la compilation automatique LaTeX">
+                <img src="https://github.com/epl-uclouvain-admission/syllabus_geometrie_trigonometrie/actions/workflows/build-pdf.yml/badge.svg" alt="Build LaTeX PDF - Trigonométrie et Géométrie" />
+              </a>
+            </div>
+
+            <h3 class="card-title">Syllabus de Trigonométrie et de Géométrie</h3>
+            <p class="card-summary">
+              Cercle trigonométrique, identités et équations trigonométriques, résolution des triangles, géométrie synthétique plane et spatiale, géométrie analytique plane (coniques) et géométrie vectorielle dans ℝ³. Inclut les annales résolues (2018–2026).
+            </p>
+
+            <div class="topic-pills">
+              <span class="topic-pill">Cercle &amp; Formules trigo</span>
+              <span class="topic-pill">Équations trigo</span>
+              <span class="topic-pill">Triangles (Sinus / Al-Kashi)</span>
+              <span class="topic-pill">Géométrie synthétique</span>
+              <span class="topic-pill">Coniques dans ℝ²</span>
+              <span class="topic-pill">Droites, plans &amp; sphères dans ℝ³</span>
+            </div>
+
+            <details class="chapters-details">
+              <summary>Voir la table des matières (9 chapitres + annexe)</summary>
+              <ol class="chapters-list">
+                <li><strong>Chapitre 1 :</strong> Fondements et cercle trigonométrique</li>
+                <li><strong>Chapitre 2 :</strong> Les grandes formules trigonométriques</li>
+                <li><strong>Chapitre 3 :</strong> Équations et inéquations trigonométriques</li>
+                <li><strong>Chapitre 4 :</strong> Résolution des triangles</li>
+                <li><strong>Chapitre 5 :</strong> Géométrie synthétique plane et spatiale</li>
+                <li><strong>Chapitre 6 :</strong> Géométrie analytique dans le plan et coniques</li>
+                <li><strong>Chapitre 7 :</strong> Géométrie analytique et vectorielle dans l'espace ℝ³</li>
+                <li><strong>Chapitre 8 :</strong> Formulaire récapitulatif</li>
+                <li><strong>Annexe :</strong> Raisonnement logique, conditions nécessaires et suffisantes</li>
+                <li><strong>Chapitre 9 :</strong> Corrigés détaillés des exercices</li>
+              </ol>
+            </details>
+
+            <div class="card-actions">
+              <a class="btn btn-primary" href="https://github.com/epl-uclouvain-admission/syllabus_geometrie_trigonometrie/releases/download/latest/syllabus_geometrie_trigonometrie_uclouvain.pdf" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Télécharger le PDF (Trigo &amp; Géo)
+              </a>
+              <div class="card-subactions">
+                <a class="btn btn-ghost" href="https://github.com/epl-uclouvain-admission/syllabus_geometrie_trigonometrie" target="_blank" rel="noopener" title="Accéder au dépôt GitHub">
+                  Dépôt Git
+                </a>
+                <a class="btn btn-ghost" href="https://github.com/epl-uclouvain-admission/syllabus_geometrie_trigonometrie/issues" target="_blank" rel="noopener" title="Signaler une erreur via un ticket (Issue)">
+                  Tickets
+                </a>
+                <a class="btn btn-ghost" href="https://github.com/epl-uclouvain-admission/syllabus_geometrie_trigonometrie/pulls" target="_blank" rel="noopener" title="Proposer une correction via Pull Request">
+                  Pull Requests
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Section 2 : Signaler une erreur ou contribuer (Tickets / Pull Requests) -->
+    <section id="contribuer" class="contrib-section">
+      <div class="section-header" style="margin-bottom: 0;">
+        <div class="section-eyebrow">Amélioration continue &amp; Open Source</div>
+        <h2 class="section-title">Signaler une erreur, faire une suggestion ou contribuer</h2>
+        <p class="section-desc">
+          Ces syllabus sont des projets collaboratifs et évolutifs. Si vous repérez une coquille dans une démonstration, une erreur de calcul dans un corrigé, une figure imprécise ou si vous souhaitez suggérer un éclaircissement pédagogique, votre retour est très précieux ! Deux possibilités s'offrent à vous sur GitHub :
+        </p>
+      </div>
+
+      <div class="contrib-grid">
+        <!-- Option 1 : Tickets (GitHub Issues) -->
+        <div class="contrib-box contrib-box-ticket">
+          <div class="contrib-box-header">
+            <div class="contrib-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+            <h3>1. Ouvrir un Ticket (GitHub Issue)</h3>
+          </div>
+          <p>
+            <strong>La méthode la plus simple et rapide</strong> (aucune connaissance de LaTeX ou de Git n'est requise).
+          </p>
+          <ol class="contrib-steps">
+            <li>Rendez-vous dans l'onglet <strong>Issues</strong> du dépôt concerné.</li>
+            <li>Cliquez sur <strong>New issue</strong>.</li>
+            <li>Précisez le <strong>numéro de chapitre, la page ou le numéro d'exercice</strong>, et décrivez la coquille ou votre suggestion (vous pouvez joindre une capture d'écran).</li>
+          </ol>
+        </div>
+
+        <!-- Option 2 : Pull Requests -->
+        <div class="contrib-box contrib-box-pr">
+          <div class="contrib-box-header">
+            <div class="contrib-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg>
+            </div>
+            <h3>2. Proposer une Pull Request (PR)</h3>
+          </div>
+          <p>
+            <strong>Idéal si vous souhaitez corriger directement le fichier source LaTeX</strong> ou ajouter une figure TikZ / un développement.
+          </p>
+          <ol class="contrib-steps">
+            <li>Créez une divergence (<em>Fork</em>) du dépôt ou modifiez directement le fichier <code>.tex</code> depuis l'interface web de GitHub.</li>
+            <li>Soumettez une <strong>Pull Request</strong> vers la branche <code>main</code>.</li>
+            <li>GitHub Actions vérifiera automatiquement que le document compile sans erreur, et le PDF sera mis à jour dès validation !</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Liens directs par dépôt -->
+      <div class="contrib-links-bar">
+        <h4>Accès direct aux tickets et Pull Requests par syllabus :</h4>
+        <div class="repo-quick-actions">
+          <div class="repo-quick-card">
+            <div class="repo-quick-title">📘 Syllabus d'Algèbre</div>
+            <div class="repo-quick-btns">
+              <a class="btn btn-secondary" style="padding: 0.45rem 0.8rem; font-size: 0.84rem;" href="https://github.com/epl-uclouvain-admission/syllabus_algebre/issues/new" target="_blank" rel="noopener">
+                + Nouveau ticket
+              </a>
+              <a class="btn btn-ghost" href="https://github.com/epl-uclouvain-admission/syllabus_algebre/issues" target="_blank" rel="noopener">
+                Voir les tickets
+              </a>
+              <a class="btn btn-ghost" href="https://github.com/epl-uclouvain-admission/syllabus_algebre/pulls" target="_blank" rel="noopener">
+                Pull Requests
+              </a>
+            </div>
+          </div>
+
+          <div class="repo-quick-card">
+            <div class="repo-quick-title">📗 Syllabus d'Analyse</div>
+            <div class="repo-quick-btns">
+              <a class="btn btn-secondary" style="padding: 0.45rem 0.8rem; font-size: 0.84rem;" href="https://github.com/epl-uclouvain-admission/syllabus_analyse/issues/new" target="_blank" rel="noopener">
+                + Nouveau ticket
+              </a>
+              <a class="btn btn-ghost" href="https://github.com/epl-uclouvain-admission/syllabus_analyse/issues" target="_blank" rel="noopener">
+                Voir les tickets
+              </a>
+              <a class="btn btn-ghost" href="https://github.com/epl-uclouvain-admission/syllabus_analyse/pulls" target="_blank" rel="noopener">
+                Pull Requests
+              </a>
+            </div>
+          </div>
+
+          <div class="repo-quick-card">
+            <div class="repo-quick-title">📙 Trigonométrie &amp; Géométrie</div>
+            <div class="repo-quick-btns">
+              <a class="btn btn-secondary" style="padding: 0.45rem 0.8rem; font-size: 0.84rem;" href="https://github.com/epl-uclouvain-admission/syllabus_geometrie_trigonometrie/issues/new" target="_blank" rel="noopener">
+                + Nouveau ticket
+              </a>
+              <a class="btn btn-ghost" href="https://github.com/epl-uclouvain-admission/syllabus_geometrie_trigonometrie/issues" target="_blank" rel="noopener">
+                Voir les tickets
+              </a>
+              <a class="btn btn-ghost" href="https://github.com/epl-uclouvain-admission/syllabus_geometrie_trigonometrie/pulls" target="_blank" rel="noopener">
+                Pull Requests
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3 : Informations complémentaires (Auteurs, Sources, Compilation) -->
+    <section class="info-grid">
+      <div class="info-card">
+        <h3>👥 Auteurs, direction et sources</h3>
+        <ul>
+          <li><strong>Direction artistique &amp; <em>Prompt Engineering</em> :</strong> L'équipe de l'examen d'admission à l'EPL — UCLouvain (<strong>Jean-François Remacle</strong> et <strong>Pierre Schaus</strong>).</li>
+          <li><strong>Rédaction et mise en forme LaTeX / TikZ :</strong> assistée par Intelligence Artificielle sous la supervision des enseignants.</li>
+          <li><strong>Sources :</strong>
+            <ul>
+              <li>Programme officiel de mathématiques (5e et 6e secondaire, 6h/semaine) de la Fédération Wallonie-Bruxelles.</li>
+              <li>Supports des cours préparatoires et annales officielles avec solutionnaires de l'examen d'admission de l'<strong>UCLouvain</strong> (2018 à 2026).</li>
+              <li>Pour la partie trigonométrique : inspiré du syllabus <em>« Synthèse de trigonométrie »</em> d'<strong>Yvan Haine</strong> et <strong>Pierre Joris</strong> (ULiège, 2012).</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="info-card">
+        <h3>🛠️ Compilation LaTeX locale</h3>
+        <p>
+          Chaque syllabus peut être compilé localement à partir de son dépôt Git si vous disposez d'une distribution LaTeX complète (<strong>TeX Live</strong> ou <strong>MacTeX</strong>) incluant <code>pdflatex</code>, <code>latexmk</code>, <code>tikz</code>, <code>pgfplots</code> et <code>tcolorbox</code> :
+        </p>
+        <pre class="code-block">git clone https://github.com/epl-uclouvain-admission/syllabus_algebre.git
+cd syllabus_algebre
+latexmk -pdf -interaction=nonstopmode main.tex</pre>
+        <p style="margin-top: 0.75rem;">
+          Le fichier généré s'intitule <code>main.pdf</code>. Sur GitHub, chaque modification poussée sur la branche <code>main</code> régénère et publie automatiquement le PDF dans la section <em>Releases (latest)</em>.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Pied de page -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <strong>École Polytechnique de Louvain (EPL) — UCLouvain</strong><br />
+        Syllabus de préparation à l'examen spécial d'admission aux études d'ingénieur civil.
+      </div>
+      <div>
+        <a href="https://github.com/epl-uclouvain-admission/syllabus" target="_blank" rel="noopener">Code source de cette page</a> ·
+        <a href="https://github.com/epl-uclouvain-admission" target="_blank" rel="noopener">Dépôts GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
